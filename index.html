@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Barras con D3.js</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Importar una fuente bonita desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Usar una tipografía bonita */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        h1 {
+            color: #4CAF50;
+            font-weight: 500;
+        }
+
+        /* Estilos básicos para el gráfico y el input */
+        #chart {
+            margin-top: 30px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .bar {
+            transition: all 0.3s ease-in-out;
+        }
+
+        input {
+            padding: 12px;
+            width: 300px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        #errorMessage {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Estilo adicional para el contenedor de entrada */
+        .input-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Mejorar visualmente las barras */
+        .bar {
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Título bonito -->
+    <h1>Gráfico de Barras con D3.js</h1>
+
+    <!-- Contenedor de entrada -->
+    <div class="input-container">
+        <label for="dataInput" style="font-size: 18px;">Source Data:</label>
+        <input type="text" id="dataInput" placeholder="Ejemplo: 10, 20, 30, 40, 50">
+        <button id="updateButton" disabled>Update Data</button>
+        <div id="errorMessage"></div>
+    </div>
+
+    <!-- Gráfico -->
+    <div id="chart"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
