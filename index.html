@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gráfico de Barras con D3.js</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <!-- Importar una fuente bonita desde Google Fonts -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* Usar una tipografía bonita */
+        
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f4f7fa;
@@ -25,8 +25,7 @@
             color: #4CAF50;
             font-weight: 500;
         }
-
-        /* Estilos básicos para el gráfico y el input */
+       
         #chart {
             margin-top: 30px;
             width: 100%;
@@ -66,14 +65,13 @@
             font-weight: bold;
             margin-top: 10px;
         }
-
-        /* Estilo adicional para el contenedor de entrada */
+        
         .input-container {
             text-align: center;
             margin-bottom: 20px;
         }
 
-        /* Mejorar visualmente las barras */
+        
         .bar {
             border-radius: 5px;
         }
@@ -81,19 +79,16 @@
     </style>
 </head>
 <body>
-
-    <!-- Título bonito -->
+    
     <h1>Gráfico de Barras con D3.js</h1>
-
-    <!-- Contenedor de entrada -->
+    
     <div class="input-container">
         <label for="dataInput" style="font-size: 18px;">Source Data:</label>
         <input type="text" id="dataInput" placeholder="Ejemplo: 10, 20, 30, 40, 50">
         <button id="updateButton" disabled>Update Data</button>
         <div id="errorMessage"></div>
     </div>
-
-    <!-- Gráfico -->
+    
     <div id="chart"></div>
 
     <script src="app.js"></script>

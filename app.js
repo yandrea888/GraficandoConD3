@@ -56,8 +56,8 @@ function createLabels(data, xScale, yScale, svg) {
 
 // Función para renderizar el gráfico
 function renderChart(data) {
-    const width = 500;   // Definir el ancho del gráfico
-    const height = 300;  // Definir la altura del gráfico
+    const width = 500;   
+    const height = 300;  
     const barPadding = 5;
     const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#F3FF33'];
 
@@ -75,7 +75,7 @@ function renderChart(data) {
         .domain([0, d3.max(data)])
         .range([height, 0]);
 
-    createBars(data, xScale, yScale, colors, svg, height);  // Pasamos height aquí
+    createBars(data, xScale, yScale, colors, svg, height);  
     createLabels(data, xScale, yScale, svg);
 }
 
@@ -107,4 +107,24 @@ updateButton.addEventListener('click', updateChart);
 
 // Evento de validación en tiempo real
 dataInput.addEventListener('input', validateInput);
+
+function createLabels(data, xScale, yScale, svg) {
+    svg.selectAll('text')
+        .data(data)
+        .enter()
+        .append('text')
+        .attr('x', (d, i) => xScale(i) + xScale.bandwidth() / 2)
+        .attr('y', d => {
+            const yPosition = yScale(d);
+            const labelHeight = 15;            
+            
+            if (yPosition - labelHeight < 0) {
+                return yPosition + labelHeight; 
+            } else {
+                return yPosition - labelHeight; 
+            }
+        })
+        .attr('text-anchor', 'middle')
+        .text(d => d);
+}
 
